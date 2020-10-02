@@ -1,5 +1,5 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
   <%= react_component 'Input', props: {
     type: 'text',
@@ -29,7 +29,7 @@
       <%= raw t('devise.registrations.google_auth1') %>
     </div>
   <% end %>
-  
+
   <% if current_user.provider == 'facebook' %>
     <div class="smallMarginTop">
       <%= raw t('devise.registrations.facebook_auth1') %>
@@ -149,7 +149,7 @@
       <%= raw t('devise.registrations.google_auth2') %>
     </div>
   <% end %>
-  
+
   <% if current_user.provider == 'facebook' %>
     <div>
       <%= raw t('devise.registrations.facebook_auth2') %>
